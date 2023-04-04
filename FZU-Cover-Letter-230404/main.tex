@@ -1,0 +1,203 @@
+% FZUletter_example.tex - an example latex file to illustrate FZUletter.cls
+% Template by Brian Wood (brian.wood@oregonstate.edu).
+% Modified by Yue Wu (contact.overleaf@wu-y.com) for PKU template.
+% Modified by Hanlin CAI (https://caihanlin.com) for FZU template.
+
+% The latex template file for FZU can be found here:
+% https://github.com/GuangLun2000/FZU-latex-template
+
+
+\documentclass[12pt]{FZUletter}
+\usepackage{fontspec} 
+\usepackage{tikz} 
+\usepackage{xcolor}
+	\definecolor{fzutheme}{RGB}{146,15,20}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{eso-pic}
+\usepackage{url}
+\usepackage{newpxtext,newpxmath}
+
+%
+% Font Selection
+\fontspec{inconsolata}
+\setmonofont[]{inconsolata}
+%
+
+\usepackage[hidelinks]{hyperref}
+%
+% This section is just a bunch of busywork so that the second and following pages read ``Page X of Y''
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\rhead{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+%
+
+\newcommand{\watermark}[2]{\AddToShipoutPictureBG{
+\parbox[b][\paperheight]{\paperwidth}{
+\vfill%
+\centering%
+\begin{tikzpicture}
+    \path (0,0) -- (\paperwidth,\paperheight);
+    \node[opacity=#2] at (current page.center)
+    {\includegraphics[width=0.55\textwidth]{#1}};
+    \end{tikzpicture}
+\vfill}}}
+
+% The material below is a whole big dang thing whose purpose is just to set up a fixed coordinate system for \tikz so that you can put the Department or School address in the upper right-hand side without it moving all around every time you change something in the page.  I think it works.
+% Defining a new coordinate system for the page:
+%
+% --------------------------
+% |(-1,1)    (0,1)    (1,1)|
+% |                        |
+% |(-1,0)    (0,0)    (1,0)|
+% |                        |
+% |(-1,-1)   (0,-1)  (1,-1)|
+% --------------------------
+\makeatletter
+\def\parsecomma#1,#2\endparsecomma{\def\page@x{#1}\def\page@y{#2}}
+\tikzdeclarecoordinatesystem{page}{
+	\parsecomma#1\endparsecomma
+	\pgfpointanchor{current page}{north east}
+	% Save the upper right corner
+	\pgf@xc=\pgf@x%
+	\pgf@yc=\pgf@y%
+	% save the lower left corner
+	\pgfpointanchor{current page}{south west}
+	\pgf@xb=\pgf@x%
+	\pgf@yb=\pgf@y%
+	% Transform to the correct placement
+	\pgfmathparse{(\pgf@xc-\pgf@xb)/2.*\page@x+(\pgf@xc+\pgf@xb)/2.}
+	\expandafter\pgf@x\expandafter=\pgfmathresult pt
+	\pgfmathparse{(\pgf@yc-\pgf@yb)/2.*\page@y+(\pgf@yc+\pgf@yb)/2.}
+	\expandafter\pgf@y\expandafter=\pgfmathresult pt
+}
+\makeatother
+
+
+%%------------------------------------------------------------------------------%%
+%
+
+%%%%%%%%%%% Put Recommender Information Here %%%%%%%%%%%
+%
+\def\name{John Doe}
+%
+% List your degree(s), licences, etc. here if you like.
+%\def\What{, Your degrees, etc.} 
+%
+% Set the name of your Department or School here
+%%%%%%%%%%%%%%%%%%  School or Department %%%%%%%%%%%%%%%
+\def\Affiliation{
+Maynooth International Engineering College, Fuzhou University
+}
+
+%%%%%%%%%%%%  Additional Contact Information %%%%%%%%%%%
+%
+% Set your preferred primary contact address here.
+\def\Address{No.2, Xuefu Rd., Minhou County} 
+\def\City{Fuzhou, Fujian Provience, China} 
+\def\Zipcode{350108}
+%
+% Set your e-mail here
+\def\Email{your@fzu.edu.cn}
+%
+% Set your preferred contact number here
+\def\TEL{(+86) 159-0059-9999}
+%
+% Set your department or personal website here
+\def\URL{https://www.fzu.edu.cn/}
+%
+% \address{\Address{}}
+
+%%%%%%%%%%%%%%%%  Footer information  %%%%%%%%%%%%%%%%%%
+%
+\def\school{~} 
+%
+%%%%%%%%%%%%%%%%%%%%%  Signature line  %%%%%%%%%%%%%%%%%%%%%
+%
+% Set your signature line here.
+% One can add a signature image in a PDF file using the following code; this requires a file called "signature.pdf" to be installed in the same folder as the .tex file.  The vertical spacing (\vspace) and the scaling will have to be adjusted to get things to look correct for your particular signature image. Alternatively, comment out the following line in favor of the one labeled "[[Alternate]]" if you want to sign a paper copy of the letter.
+%
+\signature{
+	\vspace{-12mm}\includegraphics[width=18em]{signature.pdf}\\\vspace{-2mm}
+	\name
+}
+%\signature{\name}  % [[Alternate]]
+%%------------------------------------------------------------------------------%%
+
+
+
+% This block sets up the address on the right-hand side of the header. 
+%
+% The following lines just compile the information you set up into the LaTex letter variable "address" for later use.
+%
+%The following command "clears out" the default address so that it can be better set using \tikz
+\address{}
+
+\def\newaddress{
+	{\hspace{-1.2mm}\textbf{\color{fzutheme}\Affiliation}} \\
+	\Address{} \\
+	\City{} \\
+	\textbf{\color{fzutheme}Zipcode}: \texttt{\Zipcode} \\
+	\textbf{\color{fzutheme}Tel}: \texttt{\TEL} \\
+	\textbf{\color{fzutheme}E-mail:} \href{mailto:\Email}{\texttt{\Email}} \\
+	\textbf{\color{fzutheme}URL:} \url{\URL}
+}
+%
+%%%%%%%%%%%  DATE  %%%%%%%%%%%%%%%%%%%%%%%%%
+% If you want a date different from the current date, comment out the next line in favor of the line labeled "[[Alternate]]".  The ``\vspace{10mm}'' just moves the date down a tiny bit so it doesn't interfere with the header.  This can be adjusted to your preference.
+%
+\date{\vspace{10mm} \today}
+%\date{\vspace{10mm} 20 September 2020}  %[[Alternate]]
+%
+%%%%%%%%%%% Set the subject here if there is one  %%%%
+%\subject{Stuff} % optional subject line
+
+
+
+%%-----------------------------------------------------------------------------------------%%
+%
+\begin{document}
+	%
+	%
+	%%%%%%%%  The "To" address goes here.
+	%
+	\begin{letter}{
+			Recipient University\\ 
+			Some Address\\ 
+			X Town, Y State (ZZZ Zip)
+		}
+		% This line sets up the return address to the right-side of the FZU logo.  The location is set with absolute node addresses using ``\tikz''.  It can still be a bit fussy, and you may need to alter this a little to get things to look right.  The bit that changes the position are the numbers in parentheses ``at (14.2,2.7)''
+		%
+		\begin{tikzpicture}[remember picture,overlay,,every node/.style={anchor=center}]
+		\node[text width=7cm] at (page cs:0.5,0.73){\small \newaddress};
+		\end{tikzpicture} 
+		
+		%%%%%%  The ``opening'' is just the method of address you would like to use at the start of the letter.
+		%
+		\opening{Dear Application Committee,}
+		
+		
+		%%%%%%%%%% Body of letter   %%%%%%%%%%%%%%
+		% Remove it if you do not want watermark
+		\watermark{FZU-background.pdf}{0.06}
+		
+		%%%%%%%%%%% 	Text   %%%%%%%%%%%%%%
+		\lipsum[1-5]
+		
+		%%%%%%% ``closing'' sets the sign-off line.
+		\closing{Sincerely,}
+		
+		% Comment out/in the lines below as necessary
+		%\encl{If an enclosure is provided, let them know what it is.}
+		
+		%\ps{A postscript if that is a thing you do.}
+		
+		%\cc{Someone Who Cares (and is copied).}
+		
+	\end{letter}
+	
+\end{document}
+
