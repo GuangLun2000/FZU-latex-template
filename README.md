@@ -9,11 +9,11 @@
 <left>
   <img src = "https://p.ipic.vip/n9f6ft.png" width = 64%>
 </left>
-
 <br>
 
 ### FZU-Cover-Letter 信件模版
 
+- [![Open In Overleaf](https://badgen.net/badge/%20/Open%20In%20%20Overleaf/green?icon=https://images.ctfassets.net/nrgyaltdicpt/2nBkkfg5vkAEOmdJOb1BkZ/61b5fb98c52d1be763426ee58f36bc6e/ologo_square_bw.svg)](https://www.overleaf.com/latex/templates/fzu-cover-letter-template/pymdhjrkyhpb)
 - Contributor: Hanlin Cai
 - Latest update in 2023/04/05
 - Heavily based on the [PKU-Letter-Template](https://www.overleaf.com/latex/templates/pku-letter-template/dbbmncttgcrn) modified by Yue Wu.
@@ -31,6 +31,6 @@
 - FZU-Undergrad-Thesis 本科生毕业论文模版 
 - [FZU-Flying-Handbook 福州大学飞跃手册](https://www.zhihu.com/question/563841084/answer/2739172650) 👨🏻‍💻 Under working
 
-欢迎加入项目运营！如有任何问题，请随时联络[蔡汉霖](https://caihanlin.com/)
+欢迎加入项目运营！如有任何问题，请随时与我取得联系：hanlin.cai@ieee.org
 
-Welcome to contribute! Please contact [Hanlin CAI](https://caihanlin.com/)
+If you have any problem, please feel free to contact [Hanlin CAI](https://caihanlin.com/).
