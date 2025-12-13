@@ -1,0 +1,200 @@
+%-------------------------------------------------------%
+%-                          包                         -%
+%-------------------------------------------------------%
+\usepackage{CJK,CJKnumb}
+\usepackage{url}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,gbpub=false,bibstyle=gb7714-2015,citestyle=gb7714-2015,
+gbpunctin=false,gbnamefmt=lowercase,
+]{biblatex}
+
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{booktabs} %三线表
+\usepackage{threeparttable}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{wasysym}
+\usepackage{enumerate}
+\usepackage{titlesec}
+\usepackage{epstopdf}
+\usepackage{caption}
+\usepackage{graphicx, subfig} %图包
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{fancyhdr} %页眉页脚包
+\usepackage{fontspec} %英文字体包
+\usepackage{titletoc} %设置目录格式
+\usepackage{geometry} %设置页边距
+% \usepackage{circledsteps}%enumerate带圈的序号
+\usepackage{pifont}
+\usepackage{adjustbox}
+
+
+\usepackage[labelsep=quad]{caption}
+\captionsetup[figure]{font=footnotesize, font=bf}
+\captionsetup[table]{font=footnotesize, font=bf}
+
+% \usepackage{enumitem}
+% \usepackage{float}%提供float浮动环境
+% \usepackage{booktabs}%提供命令\toprule、\midrule、\bottomrule
+% \usepackage{graphicx}
+
+
+
+
+%论文尺寸为A4，全文页面设置为：上下2.54cm，左右3.17cm，含有大量图表可微调。页边距0.5cm
+\geometry{a4paper,left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm,bindingoffset=0.25cm} 
+
+% \setCJKmainfont{simsun.ttc} %文中中文为宋体
+\setmainfont{Times New Roman} %文中英文为新罗马
+\setlength{\baselineskip}{20pt} %行距为固定值20磅
+
+
+%---------------------------------------------------------------------------%
+%-                        字体设置                               -%
+%---------------------------------------------------------------------------%
+\setCJKfamilyfont{song}{simsun.ttc}
+\setCJKfamilyfont{fs}{simfang.ttf}
+\setCJKfamilyfont{kai}{simkai.ttf}
+\setCJKfamilyfont{hei}{simhei.ttf}
+
+\newcommand{\song}{\CJKfamily{song}}    % 宋体   (simsun.ttc)
+\newcommand{\fs}{\CJKfamily{fs}}        %仿宋体  (simfs.ttf)
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体   (simkai.ttf)
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (simhei.ttf)
+
+%设置加粗体
+%加粗楷体
+\setCJKfamilyfont{kaitib}{simkai.ttf}[AutoFakeBold]
+\newcommand{\kaitib}{\CJKfamily{kaitib}}
+%加粗仿宋体
+\setCJKfamilyfont{fangsongti}{simfang.ttf}[AutoFakeBold]
+\newcommand{\fangsongti}{\CJKfamily{fangsongti}}
+%加粗黑体
+\setCJKfamilyfont{heitib}{simhei.ttf}[AutoFakeBold]
+\newcommand{\heitib}{\CJKfamily{heitib}}
+%加粗宋体
+\setCJKfamilyfont{songtib}{simsun.ttc}[AutoFakeBold]
+\newcommand{\songtib}{\CJKfamily{songtib}}
+%正文加粗快捷键
+\newcommand{\tbf}{\bfseries \songtib}
+
+%---------------------------------------------------------------------------%
+%-                          字号设置                            -%
+%---------------------------------------------------------------------------%
+
+% \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+% \newcommand{\yihao}{\fontsize{26pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaoyihao}{\fontsize{24pt}{\baselineskip}\selectfont}
+% \newcommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}
+% \newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\daxiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont} %%%%%%% by Hanlin Cai
+\newcommand{\xiaosihao}{\fontsize{11pt}{\baselineskip}\selectfont} %%%%%%% by Hanlin Cai
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.5pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.5pt}{\baselineskip}\selectfont}
+
+%---------------------------------------------------------------------------%
+%-                               Chinesization                             -%
+%---------------------------------------------------------------------------%
+\newtheorem{theorem}{\hskip 2em定理}[section]
+\newtheorem{definition}{\hskip 2em定义}[section]
+\newtheorem{exam}{\hskip 2em例}[section]
+\newtheorem{note}{\hskip 2em注}[section]
+\newtheorem{proof}{{\it \hskip 2em\textbf{证明}}}[section]
+\newtheorem{solution}{{\it \hskip 2em\textbf{解}}}
+\renewcommand{\tablename}{Table}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\refname}{\centerline {Reference}}
+\renewcommand{\contentsname}{\fontsize{15.75pt}{\baselineskip}\selectfont \textbf{CONTENT}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+
+%---------------------------------------------------------------------------%
+%-                     公式随章编号                               -%
+%---------------------------------------------------------------------------%
+\date{}
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+ \ifnum \c@tocdepth >\m@ne
+   \addpenalty{-\@highpenalty}%
+   \vskip 1.0em \@plus\p@
+   \setlength\@tempdima{1.5em}%
+   \begingroup
+     \parindent \z@ \rightskip \@pnumwidth
+     \parfillskip -\@pnumwidth
+     \leavevmode \bfseries
+     \advance\leftskip\@tempdima
+     \hskip -\leftskip
+     #1\nobreak\leaders\hbox{$\m@th
+       \mkern \@dotsep mu\hbox{-}\mkern \@dotsep
+       mu$}\hfill \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+     \penalty\@highpenalty
+   \endgroup
+ \fi}
+
+% \date{}
+% \numberwithin{equation}{section}
+% \numberwithin{figure}{section}
+% \numberwithin{table}{section}
+
+%---------------------------------------------------------------------------%
+%-                              Tabular Option                             -%
+%---------------------------------------------------------------------------%
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+%---------------------------------------------------------------------------%
+%-                              Caption Option                             -%
+%---------------------------------------------------------------------------%
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space}
+
+%------------------------------------------------------%
+%-                    文献来源                          -%
+%-------------------------------------------------------%
+\addbibresource{Text/reference.bib}
+
+%------------------------------------------------------%
+%-                Page Control 1                      -%
+%------------------------------------------------------%
+\topmargin=0cm \oddsidemargin=0.5cm \textwidth=15cm
+\textheight=22cm
+
+\titlecontents{section}[1em]{\fontsize{11pt}{\baselineskip}\selectfont}{\hspace*{3em}\contentslabel{2em}\ }%
+{}{\titlerule*[0.7pc]{$\cdot$}\contentspage\hspace*{1em}}%
+
+\titlecontents{subsection}[1em]{\fontsize{11pt}{\baselineskip}\selectfont}{\hspace*{3em}\contentslabel{2em}\ }%
+{}{\titlerule*[0.7pc]{$\cdot$}\contentspage\hspace*{1em}}%
+
+\titlecontents{subsubsection}[1em]{\fontsize{11pt}{\baselineskip}\selectfont}{\hspace*{4em}\contentslabel{2em}\ }%
+{}{\titlerule*[0.7pc]{$\cdot$}\contentspage\hspace*{1em}}%
+
+
+\renewcommand{\baselinestretch}{1.1}
+
+
+%------------------------------------------------------%
+%-                Page Control 2                      -% Hanlin Cai
+%------------------------------------------------------%
+
+\titleformat{\section}[display]{\centering\fontsize{16pt}{12pt}\selectfont\bfseries}{}{0pt}{}
+
+\titleformat{\subsection}
+{\fontsize{14pt}{12pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\fontsize{13pt}{12pt}\selectfont\bfseries}{\thesubsubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\fontsize{12pt}{12pt}\selectfont\bfseries}{\thesubsubsection}{1em}{}
+

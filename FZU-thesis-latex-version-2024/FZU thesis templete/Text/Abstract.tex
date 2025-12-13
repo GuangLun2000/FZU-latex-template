@@ -1,0 +1,76 @@
+%-------------------设置页眉页脚---------------------
+\pagenumbering{Roman} 
+\pagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+% \fancyhead[CE]{\song \wuhao Undergraduate Thesis of Maynooth University} %偶数页
+% \fancyhead[CO]{\song \wuhao Hybrid Detection Mechanism for Spoofing Attacks in Bluetooth Low Energy Networks} %奇数页
+\fancyfoot[C]{\thepage}%设置页脚
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+%---------------------摘要----------------------------
+%中文论文题目：黑体小2，居中，段前17磅，段后30磅，行距20磅
+% \vspace{17pt}
+% \begin{center} 
+% 	{\heitib \xiaoerhao
+% 	\setlength{\baselineskip}{20pt} 
+% 	Hybrid Detection Mechanism for Spoofing Attacks \\ 
+%         in Bluetooth Low Energy Networks}
+% \vspace{30pt}
+% \end{center}
+
+%摘要标题：居中，4号黑体，段前0行，段后12磅，行距20磅
+% \begin{center}
+% {\heitib \sihao Abstract}
+% \vspace{12pt}
+% \end{center}
+
+% %摘要正文：宋体小四，段前0行，段后0行，行距20磅，首行缩进2字符
+% \addcontentsline{toc}{section}{Abstract}  
+% \songti \xiaosihao
+% \setlength{\baselineskip}{20pt} 
+
+% %摘要正文后，中间空一行，另起一行写关键词。
+% %顶格，小4号黑体，不加粗，中间用逗号（中文）分开，词尾不写标点
+% \noindent {\heiti \xiaosihao \textbf{Keywords:}}
+
+
+%----------------------英文摘要-------------------------
+%英文论文题目：小3 Arial Black，不加粗，居中，段前17磅，段后30磅，行距20磅
+\newpage
+\begin{center} 
+\vspace{17pt}
+{\sanhao \textbf{Hybrid Detection Mechanism for Spoofing Attacks \\ in Bluetooth Low Energy Networks}}
+\vspace{30pt}
+\end{center}
+
+%摘要：4号Arial Black，不加粗，居中，段前0行，段后12磅，行距20磅
+\begin{center}
+% {\sihao Abstract}
+{\xiaosanhao \textbf{Abstract}} 
+\vspace{12pt}
+\end{center}
+
+\addcontentsline{toc}{section}{{\textbf{Abstract}}}
+
+%英文摘要正文，小4 Times New Roman，段前0行，段后0行，行距20磅，首行缩进4个英文字母。
+\setmainfont{Times New Roman} \xiaosihao 
+\setlength{\baselineskip}{20pt} 
+
+\noindent Bluetooth Low Energy (BLE) serves as a critical protocol for low-energy communication, playing a vital role in various sectors including industry, healthcare, and home automation. Despite its widespread adoption, inherent security limitations and firmware vulnerabilities expose BLE to significant risks, notably from spoofing attacks that threaten device integrity and data privacy. Addressing this challenge, this project introduces \textit{\textbf{BLEGuard}}, a hybrid detection mechanism specifically designed to identify spoofing attacks within BLE networks. BLEGuard integrates pre-detection scheme, reconstruction techniques, and classification models to effectively detect advanced spoofing threats. To refine and validate BLEGuard system, this project established a physical Bluetooth testbed to simulate attacks and generated a large-scale BLE Spoofing Attack Dataset (\textit{\textbf{BLE-SAD}}). The experimental results demonstrate a high detection accuracy rate of 99.02\%, with a false alarm rate of 2.04\% and an un-detection rate of 0.37\%. These findings highlight BLEGuard's effectiveness in enhancing the security of BLE networks, proving its potential as a robust solution to safeguard against sophisticated cyber threats in real-world applications. \\
+
+
+% \noindent Bluetooth Low Energy (BLE) serves as a critical protocol for low-energy communication, playing a vital role in various sectors including industry, healthcare, and smart home applications. Despite its widespread adoption, inherent security limitations and firmware vulnerabilities expose BLE to significant risks, notably from spoofing attacks that threaten device integrity and data privacy. Addressing this challenge, this project introduces \textit{\textbf{BLEGuard}}, a hybrid detection mechanism specifically designed to identify spoofing attacks within BLE networks. BLEGuard integrates a pre-detection scheme, reconstruction techniques, and classification models to effectively detect advanced spoofing threats. To refine and validate the BLEGuard system, this project established a physical Bluetooth testbed to simulate attacks and generated a large-scale BLE Spoofing Attack Dataset (\textit{\textbf{BLE-SAD}}). The experimental results demonstrate a high detection accuracy rate of 99.02%, with a false alarm rate of 2.04% and an undetection rate of 0.37%. These findings underscore BLEGuard's effectiveness in enhancing the security of BLE networks, proving its potential as a robust solution to safeguard against sophisticated cyber threats in various real-world applications.
+
+
+
+%英文关键词，中间空一行，另起一行写“keywords”。小4 Arial Black，段前0行，段后0行，行距20磅。关键词之间用逗号（英文）隔开，逗号后点击空格键（英文）一次，在写下一个。最后的词尾关键词不写标点。
+%在英文关键词中，除人名、地名的首字母，以及简缩写字母要大写外，其余单词的首字母一律小写
+
+\noindent{\daxiaosihao \textbf{Key words: Network Systems, Security and Privacy, Time-series Anomaly Detection, Machine Learning}}
+
+
+\setlength{\baselineskip}{16pt}
+
+\setmainfont{Times New Roman}
+\newpage

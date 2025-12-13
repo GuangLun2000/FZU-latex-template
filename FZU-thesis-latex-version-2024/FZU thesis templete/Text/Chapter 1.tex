@@ -1,0 +1,69 @@
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead{} %clear all fields
+\fancyhead[CE]{\xiaowuhao Maynooth University \& Fuzhou University Undergraduate Final Year Project} %偶数页
+\fancyhead[CO]{\xiaowuhao Hybrid Detection Mechanism for Spoofing Attacks in Bluetooth Low Energy Networks} %奇数页
+% \fancyhead[CO]{\xiaowuhao Maynooth University \& Fuzhou University Undergraduate Final Year Project} %奇数页
+\fancyfoot[C]{\thepage}%设置页脚
+
+\renewcommand{\headrulewidth}{1pt} %页眉与正文之间的水平线粗细
+\renewcommand{\footrulewidth}{0pt}
+
+\section*{Chapter~1~~Introduction}
+\setcounter{section}{1} \setcounter{subsection}{0} 
+\setcounter{table}{0} \setcounter{figure}{0} \setcounter{equation}{0} \setcounter{definition}{0}
+\addcontentsline{toc}{section}{\textbf{Chapter~1~~Introduction}}
+
+
+\subsection{Research Topic and Motivation}
+
+\noindent Named after the Viking King Harald Bluetooth, who was known for his role in unifying Danish tribes, Bluetooth technology has become a ubiquitous standard for short-range wireless communications. Since its inception, Bluetooth has revolutionized the way devices interact in close proximity \cite{gomez2012overview}. The advent of the \textbf{Bluetooth Low Energy (BLE)} standard has further solidified its dominance, especially in the burgeoning era of the Internet of Things (IoT) and the emerging technologies of 6G communications \cite{pattnaik2022future}. BLE's low power requirements and high functionality make it an ideal choice for a multitude of IoT applications ranging from industrial automation to health monitoring, ensuring seamless connectivity between billions of devices. By 2027, the deployment of BLE devices is anticipated to burgeon to an astonishing 7.5 billion \cite{market}.
+
+\vspace{8pt}
+
+This exponential adoption, however, is overshadowed by significant security challenges within the BLE networks. BLE-enabled devices are prone to a diverse array of sophisticated attacks due to inherent I/O limitations and firmware vulnerabilities. These threats include zero-day exploits, where attackers exploit undisclosed vulnerabilities \cite{stellios2019advanced}, DDoS (Distributed Denial of Service) attacks that cripple network services \cite{ditton2020proof}, and particularly spoofing attacks \cite{wu2020blesa}.
+
+\vspace{8pt}
+
+Spoofing attacks are alarmingly prevalent and concerning due to their low initiation costs and minimal hardware requirements, making them a preferred tactic among attackers. In these attacks, perpetrators impersonate legitimate devices, misleading network participants to intercept or manipulate sensitive data \cite{zhang2017secure}. This undermines the integrity and confidentiality of BLE systems, facilitating unauthorized access and data breaches. The ease and low cost of initiating these attacks underscore the urgent need for the development of advanced detection mechanisms. These mechanisms must be capable of identifying and mitigating the sophisticated tactics used in spoofing attacks, thereby enhancing the security posture of BLE networks against these pervasive threats \cite{wu2023sok}.
+
+\vspace{4pt}
+
+
+\subsection{Problem Statement}
+
+\noindent To combat these security threats, an out-of-the-box monitoring system has been introduced, leveraging BLE's cyber-physical features to fortify defenses against spoofing attackers \cite{wu2020blueshield}. Additionally, various research initiatives employ machine learning techniques to detect anomalous patterns within BLE network traffic. A particularly promising learning framework that integrates reconstruction and classification models has been developed to identify network packets as either benign or malicious with remarkable precision \cite{lahmadi2020mitm}.
+
+\vspace{8pt}
+
+Unfortunately, most existing methods grapple with the significant challenge of harmonizing detection accuracy, false positive rates, and resource utilization. This delicate balance severely restricts their applicability across a broader spectrum of real-world scenarios \cite{wu2020blesa}. There is a pressing need for a more adaptable and efficient solution, which can uphold stringent detection standards while effectively managing resource constraints. Such an innovation would significantly broaden the utility of security frameworks, extending their deployment across a wider variety of environments and devices. This expansion is crucial for bolstering defenses against spoofing attacks in increasingly diverse and resource-constrained settings \cite{casar2022survey}.
+
+\vspace{4pt}
+
+\subsection{Approach and Metrics}
+
+\noindent Therefore, this project aims to introduce a novel detection mechanism that leverages cyber-physical analysis and machine learning techniques. Specifically engineered to detect sophisticated spoofing attacks, this mechanism combines extensive offline training with critical real-time online analysis. In pursuit of this goal, we will establish a tangible BLE network system for conducting attack simulations and compiling a large-scale network dataset. This broad and verifiable dataset is crucial for advancing research within the domain and ensuring the robustness of our findings. A series of experiments utilizing diverse datasets will be conducted to test the viability of the detection mechanism proposed. Subsequent to these tests, a meticulous assessment of the experimental results will be performed, and their profound implications for real-world applications will be analyzed.
+
+\vspace{4pt}
+
+\subsection{Contributions of this Project}
+
+\noindent In this project, we propose \textit{BLEGuard}, an innovative detection mechanism designed to enhance security in Bluetooth Low Energy networks. Additionally, we present \textit{BLE-SAD}, an extensive network dataset generated from our specialized physical testbed. Our contributions are threefold:
+
+\begin{itemize}[leftmargin=0.1cm]
+    \setlength{\itemsep}{-0.1cm}
+    \item Development of the BLE-SAD dataset, which includes around 906,000 packets, tailored specifically for the training and evaluation of our models.
+    \item Design and empirical validation of BLEGuard, which is proposed for effective detection of spoofing attacks.
+    \item Integration capabilities of BLEGuard within BLE networks, designed to ensure effective detection without disrupting existing network operations or depleting network resources.
+\end{itemize}
+
+\vspace{2pt}
+
+\subsection{Structure of this FYP Report}
+
+% \noindent This final year project report is structured as follows: \textbf{Chapter 2} provides an overview of the technical background and related works essential for understanding the context of this project. \textbf{Chapter 3} delineates three major research problems addressed in this project. \textbf{Chapter 4} details the design and implementation of the BLE-SAD dataset and the BLEGuard mechanism. \textbf{Chapter 5} presents the experimental results, evaluating the performance of the BLEGuard mechanism. Finally, \textbf{Chapter 6} concludes the project, summarizing key findings and contributions.
+
+\noindent The structure of this final year project report is organized for clarity and depth of understanding: \textbf{Chapter 2} provides an overview of the technical background and related works essential for understanding the context of this project. \textbf{Chapter 3} outlines the three principal research questions this project seeks to resolve, emphasizing their practical implications. \textbf{Chapter 4} explicates the creation and deployment of BLE-SAD dataset, alongside the formulation of BLEGuard mechanism. \textbf{Chapter 5} presents the experimental results, assessing the effectiveness of the BLEGuard system. Finally, \textbf{Chapter 6} concludes the project, summarizing key findings and contributions.
+
+
+\newpage

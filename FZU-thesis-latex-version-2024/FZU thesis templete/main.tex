@@ -1,0 +1,64 @@
+%-------------------------------------------------------%
+%-          LaTeX Template                             -%
+%-          FZU Thesis                                 -%
+%-          Shifan He                                  -%
+%-     shifanhe0828@163.com                            -%
+%-------------------------------------------------------%
+
+\documentclass[twoside]{ctexart}
+
+
+%--------------------预定义--------------------
+\input{Text/pre-defined}
+
+
+
+\usepackage{enumitem}
+% \usepackage{float}%提供float浮动环境
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black
+}
+
+
+%--------------------文章主体--------------------
+\begin{document}
+
+\raggedbottom %让页面上对齐
+%--------------------封面页--------------------
+% \input{Text/Titlepage}
+
+%--------------------声明页--------------------
+% \input{Text/Statement}
+
+%--------------------摘要页--------------------
+\input{Text/Abstract} 
+
+%--------------------目录页--------------------
+\input{Text/Table of contents}
+
+%--------------------章节--------------------
+\input{Text/formate of section title}
+\input{Text/Chapter 1}
+\input{Text/Chapter 2}
+\input{Text/Chapter 3}
+\input{Text/Chapter 4}
+\input{Text/Chapter 5}
+\input{Text/Chapter 6}
+
+%--------------------参考文献--------------------
+\input{Text/Reference}
+
+
+%--------------------致谢页--------------------
+\input{Text/Acknowledgement}
+
+\input{Text/Appendices}
+
+%--------------------攻读博士学位期间的科研成果--------------------
+% \input{Text/PhD paper.tex}
+
+\end{document}

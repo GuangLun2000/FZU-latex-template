@@ -1,0 +1,21 @@
+%-----------------------目录---------------------------
+%目录标题：小2黑体不加粗，居中，段前17磅，段后30磅，行距20磅
+%目录二字之间空1个汉字的空格
+
+%目录正文：宋体5号，一级节标题加粗，行距17磅，段前0行，段后0行
+%一级标题（如： 第一章 引言），首行不缩进
+%二级标题（如：1.1研究背景及意义），首行缩进2个汉字
+%三级标题（如：1.1.1研究背景），首行缩进4个汉字
+
+
+\pagestyle{fancyplain} %设置目录页无页码
+\fancyhf{}  %设置目录页无页码
+\renewcommand\headrulewidth{0pt} %去掉上面的那条线
+\pagenumbering{arabic} %将目录页设置为阿拉伯数字
+\begin{center}
+\tableofcontents  
+\end{center}
+\setcounter{page}{0}%正文为第一页
+\pagestyle{empty} %本页的页脚为空，\thispagestyle{empty}
+
+\newpage
